@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UdaCity_NewsApp</string>
+    <string name="category_politics">Politics</string>
+    <string name="category_world">World</string>
+    <string name="category_opinion">Opinion</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_soccer">Soccer</string>
+    <string name="category_tech">Tech</string>
+    <string name="category_arts">Arts</string>
+    <string name="category_lifestyle">Lifestyle</string>
+    <string name="category_fashion">Fashion</string>
+    <string name="category_business">Business</string>
+    <string name="category_travel">Travel</string>
+    <string name="category_environment">Environment</string>
+</resources>
