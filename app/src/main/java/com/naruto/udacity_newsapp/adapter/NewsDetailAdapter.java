@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.naruto.udacity_newsapp.R;
@@ -58,6 +59,7 @@ public class NewsDetailAdapter extends Adapter<NewsDetailAdapter.NewsDetailViewH
 		NewsDetail newsDetail = mNewsDetails.get(position);
 		holder.tv_news_title.setText(newsDetail.getTitle());
 		holder.tv_news_date.setText(newsDetail.getPubDate());
+		holder.rl_item_news.setTag(position);
 	}
 
 	@Override
@@ -72,12 +74,14 @@ public class NewsDetailAdapter extends Adapter<NewsDetailAdapter.NewsDetailViewH
 		// 创建控件对象
 		private TextView tv_news_title;
 		private TextView tv_news_date;
+		private RelativeLayout rl_item_news;
 
 		NewsDetailViewHolder(View itemView) {
 			super(itemView);
 			// 找到控件
 			tv_news_title = (TextView) itemView.findViewById(R.id.tv_news_title);
 			tv_news_date = (TextView) itemView.findViewById(R.id.tv_news_date);
+			rl_item_news = (RelativeLayout) itemView.findViewById(R.id.rl_item_news);
 		}
 	}
 
@@ -94,7 +98,7 @@ public class NewsDetailAdapter extends Adapter<NewsDetailAdapter.NewsDetailViewH
 	public void onClick(View v) {
 		if (mOnItemClickListener != null) {
 			// 注意这里使用getTag方法获取数据
-			mOnItemClickListener.onItemClick(v, mHolder.getAdapterPosition());
+			mOnItemClickListener.onItemClick(v, (Integer) v.getTag());
 		}
 	}
 }
